@@ -1,7 +1,10 @@
-<!--<template is="person-single-bar-template"-->
-          <!--data="{{description: description,navigateToUrl: navigateToUrl}}">-->
-  <!--<view class="person-single-bar-template">-->
-    <!--&lt;!&ndash;<text>{{description ? description : '三十文'}}</text>&ndash;&gt;-->
-    <!--&lt;!&ndash;<view>{{navigateToUrl ? navigateToUrl : ''}}</view>&ndash;&gt;-->
-  <!--</view>-->
-<!--</template>-->
+<!--
+  description: string,
+  linkIcon: string
+-->
+<template name="persona-category-block"
+          class="person-category-block">
+  <view>hello world</view>
+  <text class="description">{{description}}</text>
+  <view class="link-icon">{{linkIcon}}</view>
+</template>

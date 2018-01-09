@@ -2,12 +2,14 @@
   "name": "bell-static",
   "version": "1.0.0",
   "scripts": {
-    "dev": "gulp default --env dev --watch ",
+    "dev": "gulp default --env dev --watch --silent",
     "prod": "gulp default --env prod --watch --silent ",
     "mock": "node ./mock/server.js --watch"
   },
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "regenerator": "^0.12.3"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
