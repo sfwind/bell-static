@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/reading/reading"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "圈外同学",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 500
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#55cbcb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/reading/reading",
+        "text": "圈外",
+        "iconPath": "assets/images/reading.png",
+        "selectedIconPath": "assets/images/reading_selected.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 30000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
+  "debug": false
+}

@@ -1,0 +1,7 @@
+{
+  "name": "bell-static",
+  "dependencies": {},
+  "globalDependencies": {
+    "weapp-api": "registry:dt/weapp-api#0.0.0+20161005184000"
+  }
+}
