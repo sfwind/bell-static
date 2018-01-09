@@ -1,0 +1,7 @@
+<!--<template is="person-single-bar-template"-->
+          <!--data="{{description: description,navigateToUrl: navigateToUrl}}">-->
+  <!--<view class="person-single-bar-template">-->
+    <!--&lt;!&ndash;<text>{{description ? description : '三十文'}}</text>&ndash;&gt;-->
+    <!--&lt;!&ndash;<view>{{navigateToUrl ? navigateToUrl : ''}}</view>&ndash;&gt;-->
+  <!--</view>-->
+<!--</template>-->

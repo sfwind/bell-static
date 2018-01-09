@@ -1,9 +1,16 @@
+<import src="./templates.wxml"></import>
 <import src="../../templates/divider/divider.wxml"></import>
 
-<view class="container">
+<view class="container person-container">
   <view class="person-top">
     <view class="headimage"></view>
     <text class="nickname"></text>
   </view>
   <template is="divider" data="{{height: 20}}"></template>
+  <template is="person-single-bar-template"
+            data="{{
+              description: '三十万呢',
+              navigateToUrl: 'navigateToUrl'
+            }}">
+  </template>
 </view>
