@@ -2,7 +2,7 @@
   "name": "bell-static",
   "version": "1.0.0",
   "scripts": {
-    "dev": "gulp default --env dev --watch --silent ",
+    "dev": "gulp default --env dev --watch ",
     "prod": "gulp default --env prod --watch --silent ",
     "mock": "node ./mock/server.js --watch"
   },
@@ -12,10 +12,10 @@
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
-    "del": "^3.0.0",
     "express": "^4.16.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
+    "gulp-clean": "^0.3.2",
     "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
     "gulp-jsonminify2": "^1.0.2",

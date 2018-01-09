@@ -1,0 +1,9 @@
+<import src="../../templates/divider/divider.wxml"></import>
+
+<view class="container">
+  <view class="person-top">
+    <view class="headimage"></view>
+    <text class="nickname"></text>
+  </view>
+  <template is="divider" data="{{height: 20}}"></template>
+</view>

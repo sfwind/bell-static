@@ -1,5 +1,5 @@
 let gulp = require('gulp')
-let del = require('del')
+let clean = require('gulp-clean')
 let LessPluginAutoPrefix = require('less-plugin-autoprefix')
 let autoprefix = new LessPluginAutoPrefix({browsers: ['iOS >= 8', 'Android >= 4.1']})
 let htmlmin = require('gulp-htmlmin')
@@ -26,48 +26,33 @@ let options = minimist(process.argv.slice(2), knownOptions)
 let isProd = options.env === 'prod'
 
 gulp.task('clean', () => {
-  return del.bind(null, ['dist/*'])
+  return gulp.src('dist').pipe(clean())
 })
 
 gulp.task('compile:wxml', () => {
-  gulp.src('src/**/*.wxml')
-    .pipe(gulpif(isProd, htmlmin({
-      collapseWhitespace: true,
-      removeComments: true,
-      keepClosingSlash: true
-    })))
-    .pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.wxml').pipe(gulpif(isProd, htmlmin({
+    collapseWhitespace: true,
+    removeComments: true,
+    keepClosingSlash: true
+  }))).pipe(gulp.dest('dist'))
 })
 
 gulp.task('compile:ts', () => {
-  gulp.src('src/**/*.ts')
-    .pipe(tsProject())
-    .pipe(babel({presets: ['es2015']}))
-    .pipe(gulpif(isProd, uglify({compress: true})))
-    .pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.ts').pipe(tsProject()).pipe(babel({presets: ['es2015']})).pipe(gulpif(isProd, uglify({compress: true}))).pipe(gulp.dest('dist'))
 })
 
 gulp.task('compile:js', () => {
-  gulp.src('src/**/*.js')
-    .pipe(babel({
-      presets: ['es2015']
-    }))
-    .pipe(gulpif(isProd, uglify({compress: true})))
-    .pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.js').pipe(babel({
+    presets: ['es2015']
+  })).pipe(gulpif(isProd, uglify({compress: true}))).pipe(gulp.dest('dist'))
 })
 
 gulp.task('compile:less', () => {
-  gulp.src('src/**/*.less')
-    .pipe(less({plugins: [lessFunction, autoprefix]}))
-    .pipe(gulpif(isProd, minifycss()))
-    .pipe(rename({extname: '.wxss'}))
-    .pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.less').pipe(less({plugins: [lessFunction, autoprefix]})).pipe(gulpif(isProd, minifycss())).pipe(rename({extname: '.wxss'})).pipe(gulp.dest('dist'))
 })
 
 gulp.task('compile:json', () => {
-  gulp.src('src/**/*.json')
-    .pipe(gulpif(isProd, jsonminify()))
-    .pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.json').pipe(gulpif(isProd, jsonminify())).pipe(gulp.dest('dist'))
 })
 
 gulp.task('compile', ['compile:wxml', 'compile:ts', 'compile:js', 'compile:less', 'compile:json'])

@@ -1,0 +1,6 @@
+<template name="divider"
+          data="{{height: height}}">
+  <view class="template-divider"
+        style="height: {{height * 2}}rpx">
+  </view>
+</template>
