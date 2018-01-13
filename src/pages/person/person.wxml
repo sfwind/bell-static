@@ -8,6 +8,4 @@
     <text class="nickname"></text>
   </view>
   <template is="divider" data="{{height: 20}}"></template>
-  <template is="persona-category-block" data="{{renderData}}">
-  </template>
 </view>

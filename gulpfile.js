@@ -72,7 +72,7 @@ gulp.task('watch', () => {
   console.log('【成功】编译成功')
   console.log('【观察】持续观察文件中...')
   gulp.watch('src/**/*.*', () => {
-    runSequence('clean', 'compile', () => {
+    runSequence('compile', () => {
       console.log('【成功】编译成功')
       console.log('【观察】持续观察文件中...\n\n')
     })
@@ -81,5 +81,7 @@ gulp.task('watch', () => {
 
 gulp.task('default', () => {
   // runSequence('clean', 'compile', 'watch')
-  runSequence('clean', 'compile')
+  runSequence('compile', 'watch')
+  // runSequence('clean', 'compile')
+  // runSequence('compile')
 })
