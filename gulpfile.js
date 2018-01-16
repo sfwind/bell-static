@@ -80,8 +80,5 @@ gulp.task('watch', () => {
 })
 
 gulp.task('default', () => {
-  // runSequence('clean', 'compile', 'watch')
   runSequence('compile', 'watch')
-  // runSequence('clean', 'compile')
-  // runSequence('compile')
 })

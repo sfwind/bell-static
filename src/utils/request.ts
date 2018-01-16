@@ -3,7 +3,7 @@ import AppConfig from './config'
 declare let wx: any
 
 // 配置请求路径
-const URL_PREFIX = AppConfig.local_domain
+const URL_PREFIX = AppConfig.app_domain
 
 function pget(url: string, query?: any) {
   let session = wx.getStorageSync('session')

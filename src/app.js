@@ -2,15 +2,15 @@ import { pget } from './utils/request'
 import { initWeMiniUserInfo, loadSession } from './async'
 
 App({
-  onLaunch: () => {
+  onLaunch: function() {
     console.log('开始登录')
     login()
     console.log('登录结束')
   }
 })
 
-async function login() {
-  let session = await wx.getStorageSync('session')
+function login() {
+  let session = wx.getStorageSync('session')
   console.log('历史 session:')
   console.log(session)
   if(!session || !session.state || session.expireDate <= new Date().getTime()) {
@@ -45,4 +45,3 @@ async function login() {
     })
   }
 }
-

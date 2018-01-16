@@ -1,0 +1,44 @@
+@import "../../../app";
+
+.account-container {
+  background-color: @background-color-grey;
+  .coupons-scroll-view {
+    height: rpx(180);
+  }
+  .account-category-block {
+    position: relative;
+    background-color: @background-color;
+    height: rpx(50);
+    line-height: rpx(50);
+    font-size: rpx(12);
+    padding: 0 rpx(15);
+    .category-left {
+      position: absolute;
+      left: rpx(15);
+      .descriptionIcon {
+        display: inline-block;
+        margin-right: rpx(10);
+        width: rpx(18);
+        height: rpx(18);
+        vertical-align: text-bottom;
+      }
+      .description {
+        display: inline-block;
+      }
+    }
+    .category-right {
+      position: absolute;
+      right: rpx(15);
+      .detail {
+        display: inline-block;
+      }
+      .detailIcon {
+        width: rpx(6);
+        height: rpx(12);
+        display: inline-block;
+        margin-left: rpx(10);
+        vertical-align: middle;
+      }
+    }
+  }
+}

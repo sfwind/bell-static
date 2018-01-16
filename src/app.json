@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/person/person"
+    "pages/customer/person/person",
+    "pages/customer/profile/profile",
+    "pages/customer/account/account"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
