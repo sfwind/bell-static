@@ -7,3 +7,7 @@ export function loadBaseUserInfo() {
 export function loadPersonAccount() {
   return pget('/rise/customer/account')
 }
+
+export function loadPersonProfile() {
+  return pget('/rise/customer/profile')
+}

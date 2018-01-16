@@ -9,11 +9,9 @@ Page({
     console.log(...this.data)
   },
   handleClickCategory: function(ev) {
-    console.log('you click the icon')
-    console.log(ev)
     const { url } = ev.currentTarget.dataset
-    wx.navigateTo({
-      url: url
-    })
+    if(url) {
+      wx.navigateTo({ url: url })
+    }
   }
 })

@@ -1,0 +1,67 @@
+@import "../../../app";
+
+.profile-container {
+  background-color: @background-color-grey;
+  .complete-tip {
+    height: rpx(40);
+    line-height: rpx(40);
+    background-color: #F9B685;
+    font-size: rpx(10);
+    text-align: center;
+    color: #FFF;
+  }
+  .category {
+    position: relative;
+    box-sizing: border-box;
+    background-color: @background-color-white;
+    height: rpx(50);
+    padding: 0 rpx(15);
+    margin-top: rpx(1);
+    font-size: rpx(13);
+    .category-description {
+      display: inline-block;
+      height: rpx(50);
+      line-height: rpx(50);
+    }
+  }
+  .picker {
+    position: absolute;
+    display: inline-block;
+    height: rpx(50);
+    line-height: rpx(50);
+    right: rpx(25);
+  }
+  .input {
+    position: absolute;
+    display: inline-block;
+    height: rpx(50);
+    line-height: rpx(50);
+    right: rpx(25);
+    text-align: right;
+  }
+  .workingyear {
+    .workingyear-picker {
+    }
+  }
+  .industry {
+    .industry-picker {
+    }
+  }
+  .receive-address {
+    min-height: rpx(80);
+    margin-top: rpx(10);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .receive-address-description {
+      height: rpx(80);
+      width: rpx(75);
+    }
+    .receive-address-textarea {
+      display: inline-block;
+      width: ~"calc(100% - 180rpx)";
+      height: rpx(80) !important;
+      line-height: rpx(50);
+    }
+  }
+}
