@@ -1,21 +1,19 @@
-import AppConfig from './config'
+import { URL_PREFIX } from './config'
 
 declare let wx: any
-
-// 配置请求路径
-const URL_PREFIX = AppConfig.app_domain
 
 function pget(url: string, query?: any) {
   let session = wx.getStorageSync('session')
   console.log('session state', session.state)
   return new Promise(function(resolve, reject) {
+    console.log(session.state)
     wx.showLoading({ title: '', mask: true })
     wx.request({
       url: URL_PREFIX + url,
       data: query,
       header: {
-        'content-type': 'application/json',
-        'platform': 'we-mini',
+        'content-type': 'application/json;charset=utf-8',
+        'platform': 'we_mini',
         'sk': session.state
       },
       method: 'GET',
@@ -41,12 +39,13 @@ function ppost(url: string, query?: any) {
   let session = wx.getStorageSync('session')
   console.log('session state', session.state)
   return new Promise(function(resolve, reject) {
+    console.log(session.state)
     wx.showLoading({ title: '', mask: true })
     wx.request({
       url: URL_PREFIX + url,
       data: query,
       header: {
-        'content-type': 'application/json',
+        'content-type': 'application/json;charset=utf-8',
         'platform': 'we-mini',
         'sk': session.state
       },

@@ -1,4 +1,4 @@
-import { pget, ppost } from './utils/request'
+import { pget, ppost } from './request'
 
 export function loadSession(code) {
   return pget('/wx/oauth/mini/code', { code: code })
