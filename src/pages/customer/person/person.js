@@ -1,5 +1,3 @@
-import { loadPersonInfo } from '../async'
-
 Page({
   data: {
     category: {

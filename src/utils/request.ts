@@ -9,6 +9,7 @@ function pget(url: string, query?: any) {
   let session = wx.getStorageSync('session')
   console.log('session state', session.state)
   return new Promise(function(resolve, reject) {
+    wx.showLoading({ title: '', mask: true })
     wx.request({
       url: URL_PREFIX + url,
       data: query,
@@ -25,7 +26,13 @@ function pget(url: string, query?: any) {
           reject(res)
         }
       },
-      fail: res => reject(res)
+      fail: (res) => {
+        console.log(res)
+        reject(res)
+      },
+      complete: () => {
+        wx.hideLoading()
+      }
     })
   })
 }
@@ -34,6 +41,7 @@ function ppost(url: string, query?: any) {
   let session = wx.getStorageSync('session')
   console.log('session state', session.state)
   return new Promise(function(resolve, reject) {
+    wx.showLoading({ title: '', mask: true })
     wx.request({
       url: URL_PREFIX + url,
       data: query,
@@ -50,7 +58,13 @@ function ppost(url: string, query?: any) {
           reject(res)
         }
       },
-      fail: res => reject(res)
+      fail: (res) => {
+        console.log(res)
+        reject(res)
+      },
+      complete: () => {
+        wx.hideLoading()
+      }
     })
   })
 }

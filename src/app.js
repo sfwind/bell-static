@@ -1,10 +1,18 @@
 import { pget } from './utils/request'
 import { initWeMiniUserInfo, loadSession } from './async'
+import { loadBaseUserInfo } from './pages/customer/async'
 
 App({
+  data: {},
   onLaunch: function() {
     console.log('开始登录')
     login()
+    loadBaseUserInfo().then(res => {
+      if(res.code === 200) {
+        console.log('基础信息')
+        console.log(res)
+      }
+    })
     console.log('登录结束')
   }
 })

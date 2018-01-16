@@ -1,27 +1,22 @@
-<view class="container account-container" xmlns:wx="http://www.w3.org/1999/XSL/Transform">
-  <!--<template is="account-category-block"-->
-  <!--data="{{description: '昵称', descriptionIcon: 'https://static.iqycamp.com/images/fragment/person_coupon_yhq.png', detail: '三十文',detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}">-->
-  <!--</template>-->
-  <template is="account-category-block" data="{{description: '昵称', detail: '三十文'}}"></template>
+<view class="container account-container">
+  <template is="account-category-block" data="{{description: '昵称', detail: nickName}}"></template>
   <component-divider height="1"></component-divider>
-  <template is="account-category-block" data="{{description: '圈外 ID', detail: 'b2rz5gp'}}"></template>
+  <template is="account-category-block" data="{{description: '圈外 ID', detail: riseId}}"></template>
   <component-divider height="1"></component-divider>
-  <template is="account-category-block" data="{{description: '学号', detail: '1803022002'}}"></template>
+  <template is="account-category-block" data="{{description: '学号', detail: memberId}}"></template>
   <component-divider height="1"></component-divider>
   <template is="account-category-block"
-            data="{{description: '圈外会员', detail: '训练营', detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}">
-  </template>
+            data="{{description: '圈外会员', detail: memberType, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>
   <component-divider height="25"></component-divider>
   <template is="account-category-block"
-            data="{{description: '修改手机号', detail: '18362973039', detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}">
-  </template>
+            data="{{description: '修改手机号', detail: mobile, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>
   <component-divider height="25"></component-divider>
   <template is="account-category-block" data="{{description: '奖学金/优惠券'}}"></template>
   <component-divider height="1"></component-divider>
   <scroll-view class="coupons-scroll-view" scroll-y>
-    <block wx:for="{{[1, 2, 3, 4, 5, 6, 7]}}" wx:for-index="idx" wx:for-item="coupon">
+    <block wx:key="{{idx}}" wx:for="{{coupons}}" wx:for-index="idx" wx:for-item="coupon">
       <component-divider wx:if="{{idx != 0}}" height="1"></component-divider>
-      <template is="account-category-block" data="{{description: idx + '奖学金/优惠券'}}"></template>
+      <template is="account-category-block" data="{{description: coupon.description, detail: coupon.expiredDateString}}"></template>
     </block>
   </scroll-view>
 </view>
@@ -30,14 +25,12 @@
 <template name="account-category-block">
   <view class="account-category-block">
     <view class="category-left">
-      <image wx:if="{{descriptionIcon}}" class="descriptionIcon"
-             mode="aspectFill" src="{{descriptionIcon}}"></image>
+      <image wx:if="{{descriptionIcon}}" class="descriptionIcon" mode="aspectFill" src="{{descriptionIcon}}"></image>
       <view wx:if="{{description}}" class="description">{{description}}</view>
     </view>
     <view class="category-right">
       <view wx:if="{{detail}}" class="detail">{{detail}}</view>
-      <image wx:if="{{detailIcon}}" class="detailIcon"
-             mode="aspectFill" src="{{detailIcon}}"></image>
+      <image wx:if="{{detailIcon}}" class="detailIcon" mode="aspectFill" src="{{detailIcon}}"></image>
     </view>
   </view>
 </template>

@@ -1,16 +1,11 @@
-<!--<import src="../../../templates/divider/divider.wxml"></import>-->
-
 <!-- wxml -->
 <view class="container person-container">
   <view class="person-top">
-    <image class="headimage-background" mode="aspectFill"
-           src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSiaNK8DicWOORkbRj8h0ljRpVIlTuXRICSzZGNEvTwia25F2TibAzDLs7GU6Q2IgZ8dxTxiag0HLNLGsVt4ouddBMfTvV4L3M72xE/0"></image>
-    <image class="headimage" mode="aspectFit"
-           src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSiaNK8DicWOORkbRj8h0ljRpVIlTuXRICSzZGNEvTwia25F2TibAzDLs7GU6Q2IgZ8dxTxiag0HLNLGsVt4ouddBMfTvV4L3M72xE/0"></image>
+    <image class="headimage-background" mode="aspectFill" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSiaNK8DicWOORkbRj8h0ljRpVIlTuXRICSzZGNEvTwia25F2TibAzDLs7GU6Q2IgZ8dxTxiag0HLNLGsVt4ouddBMfTvV4L3M72xE/0"></image>
+    <image class="headimage" mode="aspectFit" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSiaNK8DicWOORkbRj8h0ljRpVIlTuXRICSzZGNEvTwia25F2TibAzDLs7GU6Q2IgZ8dxTxiag0HLNLGsVt4ouddBMfTvV4L3M72xE/0"></image>
     <view class="nickname">三十文</view>
   </view>
   <template is="person-category-block" data="{{description: '个人信息', linkUrl: 'http://www.baidu.com'}}"></template>
-  <!--<template is="template-divider" data="{{height: 1}}"></template>-->
   <component-divider height="1"></component-divider>
   <template is="person-category-block" data="{{description: '我的账户', linkUrl: '../account/account'}}"></template>
   <component-divider height="1"></component-divider>
