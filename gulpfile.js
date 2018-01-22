@@ -41,7 +41,9 @@ gulp.task('compile:wxml', () => {
 
 gulp.task('compile:ts', () => {
   console.log('【编译】开始编译 ts...')
-  gulp.src('src/**/*.ts').pipe(tsProject()).pipe(babel({ presets: ['es2015'] })).pipe(gulpif(isProd, uglify({ compress: true }))).pipe(gulp.dest('dist'))
+  gulp.src('src/**/*.ts').pipe(tsProject()).pipe(babel({
+    presets: ['es2015']
+  })).pipe(gulpif(isProd, uglify({ compress: true }))).pipe(gulp.dest('dist'))
 })
 
 gulp.task('compile:js', () => {

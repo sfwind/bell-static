@@ -1,17 +1,18 @@
+<!--view-->
 <view class="container account-container">
   <template is="account-category-block" data="{{description: '昵称', detail: nickName}}"></template>
   <component-divider height="1"></component-divider>
   <template is="account-category-block" data="{{description: '圈外 ID', detail: riseId}}"></template>
   <component-divider height="1"></component-divider>
-  <template is="account-category-block" data="{{description: '学号', detail: memberId}}"></template>
+  <template wx:if="{{memberId}}" is="account-category-block" data="{{description: '学号', detail: memberId}}"></template>
   <component-divider height="1"></component-divider>
   <!--<template is="account-category-block"-->
-            <!--data="{{description: '圈外会员', detail: memberType, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
+  <!--data="{{description: '圈外会员', detail: memberType, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
   <template is="account-category-block"
             data="{{description: '圈外会员', detail: memberType}}"></template>
   <component-divider height="25"></component-divider>
   <!--<template is="account-category-block"-->
-            <!--data="{{description: '手机号', detail: mobile, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
+  <!--data="{{description: '手机号', detail: mobile, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
   <template is="account-category-block"
             data="{{description: '手机号', detail: mobile}}"></template>
   <component-divider height="25"></component-divider>
@@ -25,7 +26,7 @@
   </scroll-view>
 </view>
 
-<!-- templates -->
+<!--templates-->
 <template name="account-category-block">
   <view class="account-category-block">
     <view class="category-left">

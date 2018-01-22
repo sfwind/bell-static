@@ -22,6 +22,10 @@
       display: inline-block;
       height: rpx(50);
       line-height: rpx(50);
+      color: #000;
+    }
+    .category-detail {
+      color: #666666;
     }
   }
   .picker {
@@ -50,18 +54,35 @@
   .receive-address {
     min-height: rpx(80);
     margin-top: rpx(10);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    position: relative;
     .receive-address-description {
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      left: rpx(15);
       height: rpx(80);
       width: rpx(75);
+      padding-top: rpx(20);
+      line-height: 175%;
+    }
+    .receive-address-placeholder {
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      right: rpx(15);
+      width: ~"calc(100% - 220rpx)";
+      line-height: 175%;
+      padding-top: rpx(20);
     }
     .receive-address-textarea {
+      box-sizing: border-box;
+      position: absolute;
+      right: rpx(15);
       display: inline-block;
-      width: ~"calc(100% - 180rpx)";
+      width: ~"calc(100% - 220rpx)";
       height: rpx(80) !important;
-      line-height: rpx(50);
+      line-height: 175%;
+      padding-top: rpx(20);
     }
   }
 }

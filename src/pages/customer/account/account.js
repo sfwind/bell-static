@@ -1,4 +1,3 @@
-import '../../../libs/regenerator/runtime'
 import { loadPersonAccount } from '../async'
 
 Page({

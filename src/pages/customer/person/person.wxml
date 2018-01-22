@@ -1,28 +1,32 @@
-<!-- wxml -->
+<!--view-->
 <view class="container person-container">
   <view class="person-top">
-    <image class="headimage-background" mode="aspectFill" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSiaNK8DicWOORkbRj8h0ljRpVIlTuXRICSzZGNEvTwia25F2TibAzDLs7GU6Q2IgZ8dxTxiag0HLNLGsVt4ouddBMfTvV4L3M72xE/0"></image>
-    <image class="headimage" mode="aspectFit" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCSiaNK8DicWOORkbRj8h0ljRpVIlTuXRICSzZGNEvTwia25F2TibAzDLs7GU6Q2IgZ8dxTxiag0HLNLGsVt4ouddBMfTvV4L3M72xE/0"></image>
-    <view class="nickname">三十文</view>
+    <image class="headimage-background" mode="aspectFill" src="{{headImgUrl}}"></image>
+    <image class="headimage" mode="aspectFit" src="{{headImgUrl}}"></image>
+    <view class="nickname">{{nickName}}</view>
   </view>
   <template is="person-category-block" data="{{description: '个人信息', linkUrl: '../profile/profile'}}"></template>
   <component-divider height="1"></component-divider>
   <template is="person-category-block" data="{{description: '我的账户', linkUrl: '../account/account'}}"></template>
   <component-divider height="10"></component-divider>
   <!--<template is="person-category-block" data="{{description: '学习提醒', linkUrl: 'http://www.baidu.com'}}"></template>-->
-  <!--<view class="study-notify">建议开启：周一至周五，若当天未登录学习，晚上09：30会发给你学习提醒消息</view>-->
   <!--<template is="person-category-block"-->
   <!--data="{{description: '推荐【圈外商学院】给朋友', linkUrl: 'http://www.baidu.com'}}"></template>-->
   <!--<component-divider height="1"></component-divider>-->
-  <template is="person-category-block" data="{{description: '帮助', linkUrl: null}}"></template>
+  <view class="person-category-block">
+    <view class="description">学习提醒</view>
+    <switch class="notify-switch" bindchange="switchLearningNotify" checked="{{studyNotify}}"/>
+  </view>
+  <view class="study-notify">建议开启：周一至周五，若当天未登录学习，晚上09：30会发给你学习提醒消息</view>
+  <!--<component-divider height="10"></component-divider>-->
+  <template is="person-category-block" data="{{description: '帮助', linkUrl: '../help/help'}}"></template>
   <component-divider height="1"></component-divider>
 </view>
 
-<!-- templates -->
+<!--templates-->
 <template name="person-category-block">
   <view class="person-category-block" bindtap="handleClickCategory" data-url="{{linkUrl}}">
     <view class="description">{{description}}</view>
-    <image class="link" mode="aspectFill"
-           src="https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim"></image>
+    <image class="link" mode="aspectFill" src="https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim"></image>
   </view>
 </template>

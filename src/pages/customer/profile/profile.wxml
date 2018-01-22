@@ -1,51 +1,53 @@
-<!--wxml-->
+<!--view-->
 <view class="container profile-container">
   <view class="complete-tip">完整的个人资料 = 30积分</view>
   <view class="category workingyear">
     <view class="category-description">首次参加工作年份</view>
-    <picker class="picker" mode="date" start="1960-01-01" end="{{endWorkingYear}}" fields="year"
-            bindchange="handleWoringYearPickerChange" disabled="true">
+    <picker class="category-detail picker" mode="date" start="1960-01-01" end="{{endWorkingYear}}" fields="year"
+      bindchange="handleWoringYearPickerChange" disabled>
       {{workingYear}}
     </picker>
   </view>
   <view class="category industry">
     <view class="category-description">行业</view>
-    <picker class="picker" mode="selector" range="{{industryRange}}" value="{{industryIndex}}"
-            bindchange="handleIndustryPickerChange" disabled="true">
+    <picker class="category-detail picker" mode="selector" range="{{industryRange}}" value="{{industryIndex}}"
+      bindchange="handleIndustryPickerChange" disabled>
       {{industry}}
     </picker>
   </view>
   <view class="category job">
     <view class="category-description">职业</view>
-    <input class="input" placeholder="请填写" value="{{job}}" bindinput="handleJobChange" disabled="true"/>
+    <input class="category-detail input" placeholder="请填写" value="{{job}}" bindinput="handleJobChange" disabled/>
   </view>
   <view class="category region">
     <view class="category-description">居住地点</view>
-    <picker class="picker" mode="region" bindchange="handleRegionPickerChange" disabled="true">
+    <picker class="category-detail picker" mode="region" bindchange="handleRegionPickerChange" disabled>
       {{region}}
     </picker>
   </view>
   <view class="category realname">
     <view class="category-description">真实姓名</view>
-    <input class="input" placeholder="用户颁发毕业证书" value="{{realName}}"
-           bindinput="handleRealNameInputChange" disabled="true"/>
+    <input class="category-detail input" placeholder="用户颁发毕业证书" value="{{realName}}"
+      bindinput="handleRealNameInputChange" disabled/>
   </view>
   <view class="category married">
     <view class="category-description">感情状态</view>
-    <picker class="picker" mode="selector" range="{{marriedRange}}" value="{{marriedIndex}}"
-            bindchange="handleMarriedPickerChange" disabled="true">
+    <picker class="category-detail picker" mode="selector" range="{{marriedRange}}" value="{{marriedIndex}}"
+      bindchange="handleMarriedPickerChange" disabled>
       {{married}}
     </picker>
   </view>
   <view class="category receive-address">
     <view class="category-description receive-address-description">收件人地址</view>
-    <textarea class="receive-address-textarea" placeholder="商学院学员入学后，礼包会寄送到改地址（限大陆，海外用户请填写国内住址信息）"
-              maxlength="-1" auto-height="true" value="{{receiveAddress}}"
-              bindinput="handleReceiveAddressTextAreaChange" auto-height disabled/>
+    <text class="category-detail receive-address-placeholder" wx:if="{{receiveAddress}}">{{receiveAddress}}</text>
+    <!--<text class="category-detail receive-address-placeholder" wx:if="{{!receiveAddress}}">商学院学员入学后，礼包会寄送到改地址（限大陆，海外用户请填写国内住址信息）</text>-->
+    <!--<textarea class="category-detail receive-address-textarea" placeholder-class="receive-address-textarea-placeholder"-->
+    <!--maxlength="-1" auto-height="true" value="{{receiveAddress}}"-->
+    <!--bindinput="handleReceiveAddressTextAreaChange" auto-height disabled/>-->
   </view>
   <view class="category receiver">
     <view class="category-description">收件人</view>
-    <input class="input" placeholder="用于接收商学院学员礼包" value="{{receiver}}"
-           bindinput="handleReceiverChange" disabled="true"/>
+    <input class="category-detail input" placeholder="用于接收商学院学员礼包" value="{{receiver}}"
+      bindinput="handleReceiverChange" disabled/>
   </view>
 </view>

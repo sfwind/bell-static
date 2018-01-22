@@ -3,14 +3,19 @@ import { initWeMiniUserInfo, loadSession } from './utils/async'
 import { loadBaseUserInfo } from './pages/customer/async'
 
 App({
-  data: {},
+  globalData: {
+    nickName: '',
+    headImgUrl: ''
+  },
   onLaunch: function() {
     console.log('开始登录')
+    let _this = this
     login().then(() => {
       loadBaseUserInfo().then(res => {
         if(res.code === 200) {
-          console.log('基础信息')
-          console.log(res)
+          const { nickname, headimgurl } = res.msg
+          this.globalData.nickName = nickname
+          this.globalData.headImgUrl = headimgurl
         }
       })
     })
