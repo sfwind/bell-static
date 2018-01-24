@@ -3,12 +3,16 @@
 .profile-container {
   background-color: @background-color-grey;
   .complete-tip {
+    background-color: @background-color-white;
+    color: #F9B685;
     height: rpx(40);
     line-height: rpx(40);
-    background-color: #F9B685;
     font-size: rpx(10);
     text-align: center;
-    color: #FFF;
+    &.disable {
+      color: #FFF;
+      background-color: #F9B685;
+    }
   }
   .category {
     position: relative;

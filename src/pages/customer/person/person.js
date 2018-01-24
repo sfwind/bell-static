@@ -1,20 +1,27 @@
-import { closeLearningNotify, loadStudyNotifyStatus, openLearningNotify } from '../async'
+import { closeLearningNotify, loadBaseUserInfo, loadStudyNotifyStatus, openLearningNotify } from '../async'
 
 Page({
   data: {
-    category: {
-      nickName: '',
-      headImgUrl: ''
-    },
+    nickName: '',
+    headImgUrl: '',
     studyNotify: false
   },
   onLoad: function() {
     const app = getApp()
     const { nickName, headImgUrl } = app.globalData
-    this.setData({
-      nickName: nickName,
-      headImgUrl: headImgUrl
-    })
+    if(nickName && headImgUrl) {
+      this.setData({
+        nickName: nickName,
+        headImgUrl: headImgUrl
+      })
+    } else {
+      loadBaseUserInfo().then(userInfo => {
+        this.setData({
+          nickName: userInfo.nickName,
+          headImgUrl: userInfo.headImgUrl
+        })
+      })
+    }
     loadStudyNotifyStatus().then(res => {
       if(res.code === 200) {
         this.setData({

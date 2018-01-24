@@ -6,7 +6,6 @@ export function loadBaseUserInfo() {
 }
 
 export function loadPersonAccount() {
-  console.log(3)
   return pget('/rise/customer/account')
 }
 
@@ -24,4 +23,12 @@ export function openLearningNotify() {
 
 export function closeLearningNotify() {
   return ppost('/rise/message/close/learning/notify')
+}
+
+export function loadRegionList() {
+  return pget('/rise/customer/region')
+}
+
+export function updateProfile(params) {
+  return ppost('/rise/customer/profile', params)
 }

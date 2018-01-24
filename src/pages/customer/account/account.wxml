@@ -8,20 +8,19 @@
   <component-divider height="1"></component-divider>
   <!--<template is="account-category-block"-->
   <!--data="{{description: '圈外会员', detail: memberType, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
-  <template is="account-category-block"
-            data="{{description: '圈外会员', detail: memberType}}"></template>
+  <template is="account-category-block" data="{{description: '圈外会员', detail: memberType}}"></template>
   <component-divider height="25"></component-divider>
   <!--<template is="account-category-block"-->
   <!--data="{{description: '手机号', detail: mobile, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
-  <template is="account-category-block"
-            data="{{description: '手机号', detail: mobile}}"></template>
+  <template is="account-category-block" data="{{description: '手机号', detail: mobile}}"></template>
   <component-divider height="25"></component-divider>
   <template is="account-category-block" data="{{description: '奖学金/优惠券'}}"></template>
   <component-divider height="1"></component-divider>
   <scroll-view class="coupons-scroll-view" scroll-y>
     <block wx:key="{{idx}}" wx:for="{{coupons}}" wx:for-index="idx" wx:for-item="coupon">
       <component-divider wx:if="{{idx != 0}}" height="1"></component-divider>
-      <template is="account-category-block" data="{{description: coupon.description, detail: coupon.expiredDateString}}"></template>
+      <template is="account-category-block"
+                data="{{description: coupon.description, detail: coupon.expiredDateString}}"></template>
     </block>
   </scroll-view>
 </view>
