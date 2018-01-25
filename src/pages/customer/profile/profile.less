@@ -1,0 +1,92 @@
+@import "../../../app";
+
+.profile-container {
+  background-color: @background-color-grey;
+  .complete-tip {
+    background-color: @background-color-white;
+    color: #F9B685;
+    height: rpx(40);
+    line-height: rpx(40);
+    font-size: rpx(10);
+    text-align: center;
+    &.disable {
+      color: #FFF;
+      background-color: #F9B685;
+    }
+  }
+  .category {
+    position: relative;
+    box-sizing: border-box;
+    background-color: @background-color-white;
+    height: rpx(50);
+    padding: 0 rpx(15);
+    margin-top: rpx(1);
+    font-size: rpx(13);
+    .category-description {
+      display: inline-block;
+      height: rpx(50);
+      line-height: rpx(50);
+      color: #000;
+    }
+    .category-detail {
+      color: #666666;
+    }
+  }
+  .picker {
+    position: absolute;
+    display: inline-block;
+    height: rpx(50);
+    line-height: rpx(50);
+    right: rpx(25);
+  }
+  .input {
+    position: absolute;
+    display: inline-block;
+    height: rpx(50);
+    line-height: rpx(50);
+    right: rpx(25);
+    text-align: right;
+  }
+  .workingyear {
+    .workingyear-picker {
+    }
+  }
+  .industry {
+    .industry-picker {
+    }
+  }
+  .receive-address {
+    min-height: rpx(80);
+    margin-top: rpx(10);
+    position: relative;
+    .receive-address-description {
+      display: inline-block;
+      box-sizing: border-box;
+      position: absolute;
+      left: rpx(15);
+      height: rpx(80);
+      width: rpx(75);
+      padding-top: rpx(20);
+      line-height: 175%;
+    }
+    .receive-address-placeholder {
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      right: rpx(15);
+      width: ~"calc(100% - 220rpx)";
+      line-height: 175%;
+      padding-top: rpx(20);
+    }
+    .receive-address-textarea {
+      box-sizing: border-box;
+      position: absolute;
+      right: rpx(15);
+      display: inline-block;
+      width: ~"calc(100% - 220rpx)";
+      height: rpx(80) !important;
+      line-height: 175%;
+      padding-top: rpx(20);
+    }
+  }
+}

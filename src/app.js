@@ -1,32 +1,65 @@
-// 全局配置
+import { pget } from './utils/request'
+import { initWeMiniUserInfo, loadSession } from './utils/async'
+import { loadBaseUserInfo } from './pages/customer/async'
+import { alertMsg } from './utils/weiXinUtil'
 
 App({
-  onLaunch: function () {
-    // 登录
-    wx.login({
-      success: res => {
-        console.log('登录', res)
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: res => {
-              console.log(res)
-              this.globalData.userInfo = res.userInfo
-              // 所以此处加入 callback 以防止这种情况 getUserInfo 在 Page.onLoad 事件之后才返回
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-      }
-    })
-  },
   globalData: {
-    userInfo: null
+    nickName: '',
+    headImgUrl: ''
+  },
+  onLaunch: function() {
+    let _this = this
+    login().then(() => {
+      loadBaseUserInfo().then(res => {
+        if(res.code === 200) {
+          const { nickname, headimgurl } = res.msg
+          this.globalData.nickName = nickname
+          this.globalData.headImgUrl = headimgurl
+        }
+      })
+    })
   }
 })
+
+function login() {
+  return new Promise((resolve, reject) => {
+    let session = wx.getStorageSync('session')
+    if(!session || !session.state || session.expireDate <= new Date().getTime()) {
+      console.debug('当前用户未登录或者登录已经过期')
+      wx.login({
+        success: res => {
+          loadSession(res.code).then(result => {
+            if(result.code === 200) {
+              let msg = result.msg
+              wx.setStorageSync('session', {
+                expireDate: msg.expireDate,
+                state: msg.state
+              })
+              if(msg.firstLogin) {
+                wx.getUserInfo({
+                  success: userInfoResult => {
+                    initWeMiniUserInfo(userInfoResult.userInfo).then(res => {
+                      if(res.code !== null) {
+                        alertMsg(res.msg)
+                      }
+                    })
+                  }
+                })
+              }
+              console.debug("用户登录成功")
+              resolve()
+            } else {
+              reject()
+            }
+          })
+        },
+        fail: () => {
+          reject()
+        }
+      })
+    } else {
+      resolve()
+    }
+  })
+}

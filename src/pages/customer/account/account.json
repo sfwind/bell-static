@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-divider": "../../../components/divider/divider"
+  },
+  "enablePullDownRefresh": false
+}

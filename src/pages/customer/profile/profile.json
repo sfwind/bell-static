@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "component-divider": "../../../components/divider/divider",
+    "component-footerButton": "../../../components/footerButton/footerButton"
+  },
+  "enablePullDownRefresh": false
+}

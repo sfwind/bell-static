@@ -1,30 +1,21 @@
 {
   "pages": [
-    "pages/reading/reading"
+    "pages/customer/person/person",
+    "pages/customer/profile/profile",
+    "pages/customer/account/account",
+    "pages/customer/mobile/mobile",
+    "pages/customer/help/help",
+    "pages/customer/protocol/protocol",
+    "pages/webView/webView"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "圈外同学",
+    "navigationBarTitleText": "圈外商学院",
     "backgroundColor": "#ffffff",
     "backgroundTextStyle": "dark",
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 500
-  },
-  "tabBar": {
-    "color": "#333333",
-    "selectedColor": "#55cbcb",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "white",
-    "position": "bottom",
-    "list": [
-      {
-        "pagePath": "pages/reading/reading",
-        "text": "圈外",
-        "iconPath": "assets/images/reading.png",
-        "selectedIconPath": "assets/images/reading_selected.png"
-      }
-    ]
   },
   "networkTimeout": {
     "request": 30000,

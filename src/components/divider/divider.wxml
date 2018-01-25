@@ -1,0 +1,3 @@
+<text class="component-divider" style="height: {{height * 2}}rpx">
+  <slot></slot>
+</text>

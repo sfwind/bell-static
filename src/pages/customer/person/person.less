@@ -1,0 +1,67 @@
+@import "../../../app";
+
+.person-container {
+  background-color: @background-color-grey;
+  .person-top {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    height: rpx(150);
+    position: relative;
+    .headimage-background {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+    }
+    .headimage {
+      position: absolute;
+      left: 50%;
+      top: rpx(40);
+      transform: translateX(-50%);
+      width: rpx(60);
+      height: rpx(60);
+      border-radius: 50%;
+    }
+    .nickname {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: rpx(105);
+      font-size: rpx(13);
+    }
+  }
+  .notify-switch {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rpx(15);
+  }
+  .study-notify {
+    background-color: @background-color-grey;
+    box-sizing: border-box;
+    padding: rpx(10) rpx(15);
+    font-size: rpx(12);
+  }
+  .person-category-block {
+    position: relative;
+    background-color: @background-color-white;
+    height: rpx(50);
+    .description {
+      padding: 0 rpx(15);
+      font-size: rpx(13);
+      line-height: rpx(50);
+    }
+    .link {
+      display: block;
+      position: absolute;
+      width: rpx(6);
+      height: rpx(11.5);
+      top: 50%;
+      right: rpx(25);
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -4,3 +4,6 @@
 dist
 node_modules
 typings
+
+// 单独配置
+src/utils/config.ts

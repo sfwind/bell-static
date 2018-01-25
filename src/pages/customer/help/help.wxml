@@ -1,0 +1,26 @@
+<view class="container help-container">
+  <view class="user-protocol" bindtap="handleClickGoProtocol">
+    <view class="protocol-text">用户协议</view>
+    <image class="link" mode="aspectFill"
+           src="https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim"></image>
+  </view>
+  <component-divider height="10"></component-divider>
+  <view class="protocol-detail">
+    <title>有疑问或建议，请给后台留言</title>
+    <image class="protocol-image" src="https://static.iqycamp.com/images/personalFeedbackv2.png"
+           mode="aspectFit"></image>
+    <title>常见问题</title>
+    <title>可以在电脑端完成圈外课程练习吗？</title>
+    <content>可以登录 www.iquanwai.com/community 完成</content>
+    <title>为什么我的课程到期关闭了？</title>
+    <content>书非借不能读，为了每个人能有动力坚持完成练习，每个课程的开放天数=30天（拖延症福利），到期后自动关闭</content>
+    <title>课程的老师是谁啊？</title>
+    <content>圈外的课程多数是圈圈设计、整个团队一同打磨出来的，另外的是和一些业界大V合作开发的</content>
+    <!--<title>还想了解更多【商学院】的使用问题？戳链接直达：</title>-->
+    <!--<content>-->
+      <!--https://shimo.im/doc/EQFflI3uWg4mE9FZ?r=GQ373Y/-->
+    <!--</content>-->
+    <!--<title>还想了解更多【训练营】的使用问题？戳链接直达：</title>-->
+    <!--<content>https://shimo.im/doc/DjJ32owqYC0iBTIw?r=GQ373Y/</content>-->
+  </view>
+</view>

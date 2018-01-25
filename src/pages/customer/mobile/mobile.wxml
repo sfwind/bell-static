@@ -1,0 +1,30 @@
+<view class="container mobile-container">
+  <block wx:if="{{!oversea}}">
+    <view class="category">
+      <view class="switch" bindtap="handleSwitchUserMode">点击切换国外用户模式</view>
+    </view>
+    <component-divider height="1"></component-divider>
+    <view class="category">
+      <view class="desc">手机号</view>
+      <input class="value" placeholder="请填写手机号" type="number" bindinput="handleMobileChange"/>
+    </view>
+    <component-divider height="10"></component-divider>
+    <view class="category">
+      <view class="desc">验证码</view>
+      <view class="code-tip {{waiting ? 'waiting' : ''}}" bindtap="handleGetVertifyCode">
+        {{waiting ? remainSeconds + '秒后重新发送' : '发送验证码'}}
+      </view>
+      <input class="value" placeholder="请填写" type="number" bindinput="handleVertificationCodeChange"/>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="category">
+      <view class="switch" bindtap="handleSwitchUserMode">点击切换国内用户模式</view>
+    </view>
+    <view class="category">
+      <view class="desc">微信号</view>
+      <input class="value wexinid" placeholder="不确定？微信点击右下角“我”可查看" type="text" bindinput="handleWeXinIdChange"/>
+    </view>
+  </block>
+  <component-footerButton text="提交" disabled="{{!enableSubmit}}" bind:click="handleUpdate"></component-footerButton>
+</view>

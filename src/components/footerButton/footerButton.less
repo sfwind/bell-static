@@ -1,0 +1,32 @@
+@import "../../app";
+
+.component-footer-button {
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  z-index: 10;
+  font-size: rpx(17);
+  width: 100vw;
+  height: rpx(50);
+  background-color: @background-color-white;
+  box-shadow: 0 0 rpx(8) rpx(4) rgba(0, 0, 0, 0.4);
+  .content {
+    background-color: #fbe452;
+    width: 88%;
+    height: rpx(40);
+    font-size: rpx(20);
+    line-height: rpx(40);
+    border-radius: rpx(20);
+    color: #333;
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    &.disabled {
+      background-color: #cccccc;
+    }
+  }
+}

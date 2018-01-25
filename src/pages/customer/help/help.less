@@ -1,0 +1,47 @@
+@import "../../../app";
+
+.help-container {
+  background-color: @background-color-grey;
+  .user-protocol {
+    position: relative;
+    background-color: @background-color-white;
+    height: rpx(50);
+    .protocol-text {
+      padding: 0 rpx(15);
+      font-size: rpx(13);
+      line-height: rpx(50);
+    }
+    .link {
+      display: block;
+      position: absolute;
+      width: rpx(6);
+      height: rpx(11.5);
+      top: 50%;
+      right: rpx(25);
+      transform: translateY(-50%);
+    }
+  }
+  .protocol-detail {
+    background-color: @background-color-white;
+    box-sizing: border-box;
+    padding: rpx(10) rpx(15);
+    .protocol-image {
+      display: block;
+      margin: rpx(5) auto;
+    }
+    title {
+      display: block;
+      font-size: rpx(15);
+      line-height: 175%;
+      font-weight: bold;
+      margin-top: rpx(10);
+      color: #2c2c2c;
+    }
+    content {
+      display: block;
+      font-size: rpx(15);
+      line-height: 175%;
+      color: #333;
+    }
+  }
+}
