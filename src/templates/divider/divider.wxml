@@ -1,3 +1,0 @@
-<template name="template-divider">
-  <view class="template-divider" style="height: {{height * 2}}rpx"></view>
-</template>

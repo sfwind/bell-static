@@ -5,7 +5,8 @@
     "pages/customer/account/account",
     "pages/customer/mobile/mobile",
     "pages/customer/help/help",
-    "pages/customer/protocol/protocol"
+    "pages/customer/protocol/protocol",
+    "pages/webView/webView"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

@@ -9,8 +9,6 @@ Page({
   onLoad: function() {
     const app = getApp()
     const { nickName, headImgUrl } = app.globalData
-    console.log('global')
-    console.log(app.globalData)
     if(nickName && nickName != '' && headImgUrl && headImgUrl != '') {
       this.setData({
         nickName: nickName,

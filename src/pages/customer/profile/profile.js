@@ -166,7 +166,6 @@ Page({
       receiver: receiver,
       workingYear: workingYear
     }
-    console.log(params)
     updateProfile(params).then(res => {
       if(res.code === 200) {
         alertMsg('提交成功')
