@@ -26,7 +26,7 @@ function login() {
   return new Promise((resolve, reject) => {
     let session = wx.getStorageSync('session')
     if(!session || !session.state || session.expireDate <= new Date().getTime()) {
-      console.log('当前用户未登录或者登录已经过期')
+      console.debug('当前用户未登录或者登录已经过期')
       wx.login({
         success: res => {
           loadSession(res.code).then(result => {
@@ -47,6 +47,7 @@ function login() {
                   }
                 })
               }
+              console.debug("用户登录成功")
               resolve()
             } else {
               reject()

@@ -9,6 +9,7 @@ Page({
   onLoad: function() {
     const app = getApp()
     const { nickName, headImgUrl } = app.globalData
+    console.log(app.globalData)
     if(nickName && nickName != '' && headImgUrl && headImgUrl != '') {
       this.setData({
         nickName: nickName,
@@ -16,6 +17,7 @@ Page({
       })
     } else {
       loadBaseUserInfo().then(res => {
+        console.log('拉取新信息', res.msg)
         this.setData({
           nickName: res.msg.nickname,
           headImgUrl: res.msg.headimgurl

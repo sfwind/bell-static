@@ -19,7 +19,7 @@ export const alertMsg = (param1: string, param2?: string) => {
 export const showSuccess = (content?: string) => {
   let params = {
     icon: 'success',
-    duration: 1500,
+    duration: 2000,
     mask: true
   }
   if(content) {

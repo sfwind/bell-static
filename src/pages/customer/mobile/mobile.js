@@ -8,7 +8,7 @@ Page({
     weXinId: null,
     oversea: false,
     waiting: false,
-    remainSeconds: 5,
+    remainSeconds: 60,
     enableSubmit: false
   },
   onLoad: function() {
