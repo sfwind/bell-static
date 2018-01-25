@@ -2,11 +2,11 @@ import { loadPersonAccount } from '../async'
 
 Page({
   data: {
-    nickName: '',
-    riseId: '',
-    memberId: '',
-    memberType: '',
-    mobile: '',
+    nickName: null,
+    riseId: null,
+    memberId: null,
+    memberType: null,
+    mobile: null,
     coupons: []
   },
   onLoad: function() {
@@ -24,16 +24,9 @@ Page({
       }
     })
   },
-  onShow: function() {
-
-  },
-  onReady: function() {
-
-  },
-  onHide: function() {
-
-  },
-  onUnload: function() {
-
+  handleModifyMobileNo: function() {
+    wx.navigateTo({
+      url: '../mobile/mobile'
+    })
   }
 })

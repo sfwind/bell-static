@@ -1,6 +1,6 @@
 <!--view-->
 <view class="container profile-container">
-  <view wx:if="{{disableSubmit}}" class="complete-tip {{disableSubmit ? 'disable' : ''}}">完整的个人资料 = 30积分</view>
+  <view wx:if="{{!enableSubmit}}" class="complete-tip {{enableSubmit ? '' : 'disable'}}">完整的个人资料 = 30积分</view>
   <view wx:else class="complete-tip">个人资料完整，30积分get！</view>
   <view class="category workingyear">
     <view class="category-description">首次参加工作年份</view>
@@ -56,5 +56,5 @@
            bindinput="handleReceiverChange"/>
   </view>
 
-  <component-footerButton text="完成" disabled="{{disableSubmit}}" bind:click="handleSubmit"></component-footerButton>
+  <component-footerButton text="完成" disabled="{{!enableSubmit}}" bind:click="handleSubmit"></component-footerButton>
 </view>

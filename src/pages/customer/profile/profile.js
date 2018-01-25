@@ -1,4 +1,5 @@
 import { loadPersonProfile, loadRegionList, updateProfile } from '../async'
+import { alertMsg } from '../../../utils/weiXinUtil'
 
 const industryList = [
   '互联网/电商',
@@ -38,7 +39,7 @@ Page({
     married: '',
     receiveAddress: '',
     receiver: '',
-    disableSubmit: true
+    enableSubmit: false
   },
   onLoad: function() {
     loadPersonProfile().then(res => {
@@ -168,11 +169,7 @@ Page({
     console.log(params)
     updateProfile(params).then(res => {
       if(res.code === 200) {
-        wx.showModal({
-          content: '提交成功',
-          showCancel: false,
-          confirmText: '关闭'
-        })
+        alertMsg('提交成功')
       }
     })
   },
@@ -188,7 +185,7 @@ Page({
       receiveAddress !== '' && receiveAddress &&
       receiver !== '' && receiver
     )
-    this.setData({ disableSubmit: !enableSubmit })
+    this.setData({ enableSubmit: enableSubmit })
   }
 })
 

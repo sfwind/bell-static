@@ -32,3 +32,15 @@ export function loadRegionList() {
 export function updateProfile(params) {
   return ppost('/rise/customer/profile', params)
 }
+
+export function sendValidCode(phone) {
+  return ppost('/rise/customer/send/valid/code', { phone: phone })
+}
+
+export function validSms(code) {
+  return ppost('/rise/customer/valid/sms', { code: code })
+}
+
+export function updateWeXinId(weiXinId) {
+  return ppost('/rise/customer/update/weixinId', { wexinId: weiXinId })
+}

@@ -9,6 +9,7 @@
   },
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.4",
     "regenerator": "^0.12.3"
   },
   "devDependencies": {

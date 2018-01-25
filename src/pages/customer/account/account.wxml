@@ -10,9 +10,16 @@
   <!--data="{{description: '圈外会员', detail: memberType, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
   <template is="account-category-block" data="{{description: '圈外会员', detail: memberType}}"></template>
   <component-divider height="25"></component-divider>
-  <!--<template is="account-category-block"-->
-  <!--data="{{description: '手机号', detail: mobile, detailIcon: 'https://static.iqycamp.com/images/mobilePersonalEnter.png?imageslim'}}"></template>-->
-  <template is="account-category-block" data="{{description: '手机号', detail: mobile}}"></template>
+  <view class="account-category-block">
+    <view class="category-left">
+      <view class="description">手机号</view>
+    </view>
+    <view class="category-right" bindtap="handleModifyMobileNo">
+      <view class="detail {{mobile || 'disabled'}}">{{mobile || '去绑定手机号'}}</view>
+      <image class="detailIcon" mode="aspectFill"
+             src="https://static.iqycamp.com/images/mobilePersonalEnter.png"></image>
+    </view>
+  </view>
   <component-divider height="25"></component-divider>
   <template is="account-category-block" data="{{description: '奖学金/优惠券'}}"></template>
   <component-divider height="1"></component-divider>

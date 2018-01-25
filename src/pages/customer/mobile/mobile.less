@@ -1,0 +1,51 @@
+@import "../../../app";
+
+.mobile-container {
+  background-color: @background-color-grey;
+  .category {
+    position: relative;
+    height: rpx(50);
+    font-size: rpx(14);
+    line-height: rpx(50);
+    box-sizing: border-box;
+    padding: 0 rpx(15);
+    background-color: @background-color-white;
+    .switch {
+      color: #399BD3;
+    }
+    .desc {
+      display: inline-block;
+      height: rpx(50);
+      float: left;
+    }
+    .value {
+      display: inline-block;
+      height: rpx(50);
+      line-height: rpx(50);
+      float: right;
+      text-align: right;
+      &.wexinid {
+        width: rpx(250);
+      }
+    }
+    .code-tip {
+      box-sizing: border-box;
+      display: inline-block;
+      float: right;
+      margin-top: rpx(8);
+      margin-left: rpx(10);
+      text-align: center;
+      border-radius: rpx(4);
+      height: rpx(34);
+      line-height: rpx(34);
+      padding: 0 rpx(10);
+      color: #399BD3;
+      border: rpx(1) solid #399BD3;
+      &.waiting {
+        background-color: #ccc;
+        color: #fff;
+        border: none;
+      }
+    }
+  }
+}
