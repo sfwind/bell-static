@@ -1,7 +1,7 @@
 import { pget } from './utils/request'
 import { initWeMiniUserInfo, loadSession } from './utils/async'
 import { loadBaseUserInfo } from './pages/customer/async'
-import { alertMsg } from './utils/weiXinUtil'
+import { alertMsg } from './utils/wxUtil'
 
 App({
   globalData: {

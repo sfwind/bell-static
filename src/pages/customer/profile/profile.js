@@ -1,5 +1,5 @@
 import { loadPersonProfile, loadRegionList, updateProfile } from '../async'
-import { alertMsg } from '../../../utils/weiXinUtil'
+import { alertMsg } from '../../../utils/wxUtil'
 
 const industryList = [
   '互联网/电商',
@@ -185,6 +185,9 @@ Page({
       receiver !== '' && receiver
     )
     this.setData({ enableSubmit: enableSubmit })
+  },
+  formSubmit: function(ev) {
+    console.log(ev)
   }
 })
 

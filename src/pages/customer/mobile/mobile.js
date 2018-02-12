@@ -1,5 +1,5 @@
 import { loadPersonProfile, sendValidCode, updateWeXinId, validSms } from '../async'
-import { alertMsg, showSuccess } from '../../../utils/weiXinUtil'
+import { alertMsg, showSuccess } from '../../../utils/wxUtil'
 
 Page({
   data: {

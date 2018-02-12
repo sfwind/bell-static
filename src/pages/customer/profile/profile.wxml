@@ -56,5 +56,10 @@
            bindinput="handleReceiverChange"/>
   </view>
 
-  <component-footerButton text="完成" disabled="{{!enableSubmit}}" bind:click="handleSubmit"></component-footerButton>
+  <form report-submit="true" bindsubmit="formSubmit">
+    <button formType="submit">
+      <component-footerButton formType="submit" text="完成" disabled="{{!enableSubmit}}"
+                              bind:click="handleSubmit"></component-footerButton>
+    </button>
+  </form>
 </view>
