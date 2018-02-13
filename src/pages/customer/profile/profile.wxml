@@ -1,5 +1,5 @@
 <!--view-->
-<view class="container profile-container" xmlns:wx="">
+<view class="container profile-container">
   <view wx:if="{{!enableSubmit}}" class="complete-tip {{enableSubmit ? '' : 'disable'}}">完整的个人资料 = 30积分</view>
   <view wx:else class="complete-tip">个人资料完整，30积分get！</view>
 
