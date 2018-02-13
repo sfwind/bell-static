@@ -1,5 +1,5 @@
 import { pget } from './utils/request'
-import { loadSession } from './utils/async'
+import { initWeMiniUserInfo, loadSession } from './utils/async'
 import { loadBaseUserInfo } from './pages/customer/async'
 import { alertMsg } from './utils/wxUtil'
 
@@ -36,7 +36,18 @@ function login() {
                 expireDate: msg.expireDate,
                 state: msg.state
               })
-              console.debug('用户登录成功')
+              if(msg.firstLogin) {
+                wx.getUserInfo({
+                  success: userInfoResult => {
+                    initWeMiniUserInfo(userInfoResult.userInfo).then(res => {
+                      if(res.code !== null) {
+                        alertMsg(res.msg)
+                      }
+                    })
+                  }
+                })
+              }
+              console.debug("用户登录成功")
               resolve()
             } else {
               reject()
