@@ -1,0 +1,7 @@
+<view class="component-footer-page">
+  <form report-submit="true" bindsubmit="handleSubmitForm">
+    <button formType="submit">
+      <slot></slot>
+    </button>
+  </form>
+</view>
