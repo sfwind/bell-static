@@ -1,5 +1,4 @@
 import { pget, ppost } from '../../utils/request'
-import * as regeneratorRuntime from '../../libs/regenerator-runtime/runtime.js'
 
 export function loadBaseUserInfo() {
   return pget('/rise/customer/info')

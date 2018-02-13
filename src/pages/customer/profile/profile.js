@@ -41,6 +41,7 @@ Page({
     receiver: '',
     enableSubmit: false
   },
+  /** 生命周期 **/
   onLoad: function() {
     loadPersonProfile().then(res => {
       if(res.code === 200) {
@@ -77,6 +78,7 @@ Page({
       })
     }
   },
+  /** 事件处理 **/
   handleWoringYearPickerChange: function(ev) {
     const { value } = ev.detail
     this.setData({
@@ -172,6 +174,7 @@ Page({
       }
     })
   },
+  /** 私有方法 **/
   checkSubmitDisable: function() {
     const { workingYear, industry, job, region, realName, married, receiveAddress, receiver } = this.data
     const enableSubmit = (
@@ -185,9 +188,6 @@ Page({
       receiver !== '' && receiver
     )
     this.setData({ enableSubmit: enableSubmit })
-  },
-  formSubmit: function(ev) {
-    console.log(ev)
   }
 })
 
