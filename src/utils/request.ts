@@ -1,5 +1,5 @@
 import { URL_PREFIX } from './config'
-import { initWeMiniUserInfo, loadSession } from './async'
+import { initSession } from './async'
 
 declare let wx: any
 

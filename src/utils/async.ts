@@ -1,11 +1,11 @@
 import { pget, ppost } from './request'
 
-export function loadSession(code) {
+export function initSession(code) {
   return pget('/wx/oauth/mini/code', { code: code })
 }
 
-export function initWeMiniUserInfo(param: {unionId: string, nickName: string, avatarUrl: string, gender: number}) {
-  return ppost('/account/init', param)
+export function loadBaseUserInfo() {
+  return pget('/rise/customer/info')
 }
 
 /** 页面打点 */
@@ -18,3 +18,4 @@ export function mark(param: {module: string, func: string, action: string, memo?
   }
   return ppost('/rise/b/mark', param)
 }
+

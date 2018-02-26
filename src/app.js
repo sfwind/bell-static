@@ -1,5 +1,5 @@
 import { pget } from './utils/request'
-import { initWeMiniUserInfo, loadSession } from './utils/async'
+import { initSession } from './utils/async'
 import { loadBaseUserInfo } from './pages/customer/async'
 import { alertMsg } from './utils/wxUtil'
 
@@ -9,7 +9,6 @@ App({
     headImgUrl: ''
   },
   onLaunch: function() {
-    let _this = this
     login().then(() => {
       loadBaseUserInfo().then(res => {
         if(res.code === 200) {
@@ -29,25 +28,15 @@ function login() {
       console.debug('当前用户未登录或者登录已经过期')
       wx.login({
         success: res => {
-          loadSession(res.code).then(result => {
+          console.log('load login code: ' + res.code)
+          initSession(res.code).then(result => {
             if(result.code === 200) {
               let msg = result.msg
               wx.setStorageSync('session', {
                 expireDate: msg.expireDate,
                 state: msg.state
               })
-              if(msg.firstLogin) {
-                wx.getUserInfo({
-                  success: userInfoResult => {
-                    initWeMiniUserInfo(userInfoResult.userInfo).then(res => {
-                      if(res.code !== null) {
-                        alertMsg(res.msg)
-                      }
-                    })
-                  }
-                })
-              }
-              console.debug("用户登录成功")
+              console.debug('用户登录成功')
               resolve()
             } else {
               reject()
