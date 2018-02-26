@@ -1,0 +1,23 @@
+<view class="mobile-bind-container">
+    <view class="input-area">
+        <view class="label">手机号</view>
+        <input placeholder="请填写手机号" value="{{phone? phone : ''}}" class="input" type="number"
+               bindinput="handleChangePhone"/>
+    </view>
+    <view class="input-area">
+        <view class="label">验证码</view>
+        <input placeholder="请填写" value="{{code? code : ''}}" class="input" type="number"
+               bindinput="handleChangeCode"/>
+    </view>
+
+    <block>
+        <view class="send-code sending" wx:if="{{sending}}">
+            {{seconds}}秒后重新发送
+        </view>
+        <button class="send-code free" bindtap="onClick" wx:if="{{!sending}}">
+            发送验证码
+        </button>
+    </block>
+
+    <component-footerButton text="提交" disabled="{{!enableSubmit}}" bind:click="onSubmit"/>
+</view>

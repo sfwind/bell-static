@@ -4,6 +4,7 @@
     "pages/customer/profile/profile",
     "pages/customer/account/account",
     "pages/customer/mobile/mobile",
+    "pages/customer/mobilechange/mobileModify",
     "pages/customer/help/help",
     "pages/customer/protocol/protocol",
     "pages/webView/webView"

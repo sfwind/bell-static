@@ -26,7 +26,7 @@ Page({
   },
   handleModifyMobileNo: function() {
     wx.navigateTo({
-      url: '../mobile/mobile'
+      url: '../mobilechange/mobileModify'
     })
   }
 })
