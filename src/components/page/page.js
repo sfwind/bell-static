@@ -1,8 +1,8 @@
 Component({
   methods: {
     handleSubmitForm: function(ev) {
-      // 拿到 formId，存储，一天拿五个
-      console.log(ev)
+      // 获取 formId，保证一天获取 formid 为 5 个
+
     }
   }
 })
